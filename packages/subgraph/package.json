@@ -17,6 +17,9 @@
     "deploy:optimism": "yarn prepare:optimism && bash -c 'source .env || true && graph deploy --node https://api.thegraph.com/deploy/ $SUBGRAPH_OPTIMISM'",
     "deploy:polygon": "yarn prepare:polygon && bash -c 'source .env || true && graph deploy --studio $SUBGRAPH_POLYGON'",
     "deploy:mumbai": "yarn prepare:mumbai && bash -c 'source .env || true && graph deploy --studio $SUBGRAPH_MUMBAI'",
+    "deploy:moonbase": "yarn prepare:moonbase && bash -c 'source .env || true && graph deploy --studio $SUBGRAPH_MOONBASE'",
+    "deploy:moonriver": "yarn prepare:moonriver && bash -c 'source .env || true && graph deploy --studio $SUBGRAPH_MOONRIVER'",
+    "deploy:moonbeam": "yarn prepare:moonbeam && bash -c 'source .env || true && graph deploy --studio $SUBGRAPH_MOONBEAM'",
     "prepare:mainnet": "mustache networks/mainnet.json subgraph.template.yaml > subgraph.yaml",
     "prepare:sepolia": "mustache networks/sepolia.json subgraph.template.yaml > subgraph.yaml",
     "prepare:gnosis": "mustache networks/gnosis.json subgraph.template.yaml > subgraph.yaml",
@@ -25,7 +28,10 @@
     "prepare:bsc": "mustache networks/bsc.json subgraph.template.yaml > subgraph.yaml",
     "prepare:optimism": "mustache networks/optimism.json subgraph.template.yaml > subgraph.yaml",
     "prepare:polygon": "mustache networks/polygon.json subgraph.template.yaml > subgraph.yaml",
-    "prepare:mumbai": "mustache networks/mumbai.json subgraph.template.yaml > subgraph.yaml"
+    "prepare:mumbai": "mustache networks/mumbai.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:moonbase": "mustache networks/moonbase.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:moonriver": "mustache networks/moonriver.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:moonbeam": "mustache networks/moonbeam.json subgraph.template.yaml > subgraph.yaml"
   },
   "devDependencies": {
     "mustache": "^4.2.0",

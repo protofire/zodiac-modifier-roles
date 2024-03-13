@@ -22,6 +22,7 @@ const {
   GNOSISSCAN_API_KEY,
   POLYGONSCAN_API_KEY,
   ARBISCAN_API_KEY,
+  MOONSCAN_API_KEY,
 } = process.env;
 
 const sharedNetworkConfig: HttpNetworkUserConfig = {};
@@ -83,6 +84,18 @@ const config: HardhatUserConfig = {
       ...sharedNetworkConfig,
       url: "https://arb1.arbitrum.io/rpc",
     },
+    moonbase: {
+      ...sharedNetworkConfig,
+      url: 'https://moonbase.unitedbloc.com',
+    },
+    moonriver: {
+      ...sharedNetworkConfig,
+      url: 'https://moonriver.unitedbloc.com:2000',
+    },
+    moonbeam: {
+      ...sharedNetworkConfig,
+      url: 'https://rpc.api.moonbeam.network',
+    },
   },
   etherscan: {
     apiKey: {
@@ -92,6 +105,9 @@ const config: HardhatUserConfig = {
       matic: POLYGONSCAN_API_KEY,
       mumbai: POLYGONSCAN_API_KEY,
       arbitrum: ARBISCAN_API_KEY,
+      moonbase: MOONSCAN_API_KEY,
+      moonriver: MOONSCAN_API_KEY,
+      moonbeam: MOONSCAN_API_KEY,
     } as Record<string, string>,
     customChains: [
       {
@@ -124,6 +140,30 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: "https://api.arbiscan.io/api",
           browserURL: "https://www.arbiscan.io",
+        },
+      },
+      {
+        network: "moonbeam",
+        chainId: 1284,
+        urls: {
+          apiURL: 'https://api-moonbeam.moonscan.io/api',
+          browserURL: 'https://moonscan.io/',
+        },
+      },
+      {
+        network: "moonriver",
+        chainId: 1285,
+        urls: {
+          apiURL: 'https://moonriver.moonscan.io/api',
+          browserURL: 'https://moonriver.moonscan.io/',
+        },
+      },
+      {
+        network: "moonbase",
+        chainId: 1287,
+        urls: {
+          apiURL: 'https://moonbase.moonscan.io/api',
+          browserURL: 'https://moonbase.moonscan.io/',
         },
       },
     ],

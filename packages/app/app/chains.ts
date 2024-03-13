@@ -8,6 +8,9 @@ import {
   polygon,
   polygonMumbai,
   gnosis,
+  moonbaseAlpha,
+  moonriver,
+  moonbeam,
 } from "@wagmi/core/chains" // cannot import from wagmi/chains because that one declares "use client;"
 
 export const CHAINS = {
@@ -65,6 +68,24 @@ export const CHAINS = {
     prefix: "maticmum",
     blockExplorerAbiUrl: "https://api-mumbai.polygonscan.com/api",
     blockExplorerApiKey: "NM937M1IZXVQ6QVDXS73XMF8JSAB677JWQ",
+  },
+  [moonbaseAlpha.id]: {
+    ...moonbaseAlpha,
+    prefix: "moon",
+    blockExplorerAbiUrl: "https://api-moonbeam.alphablock.com/api",
+    blockExplorerApiKey: "6MK6MMCPVPN7YR7TZFDJY49YVCXAJXIJ4X",
+  },
+  [moonriver.id]: {
+    ...moonriver,
+    prefix: "moon",
+    blockExplorerAbiUrl: "https://api-moonbeam.alphablock.com/api",
+    blockExplorerApiKey: "6MK6MMCPVPN7YR7TZFDJY49YVCXAJXIJ4X",
+  },
+  [moonbeam.id]: {
+    ...moonbeam,
+    prefix: "moon",
+    blockExplorerAbiUrl: "https://api-moonbeam.alphablock.com/api",
+    blockExplorerApiKey: "6MK6MMCPVPN7YR7TZFDJY49YVCXAJXIJ4X",
   },
 }
 
